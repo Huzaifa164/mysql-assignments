@@ -1,0 +1,22 @@
+1) 
+select count(amt) from orders 
+where odate='1990-10-03';
+
+2)
+select count(city) from customers
+where city is not null;
+
+3)
+select cnum, min(amt) from orders
+group by cnum;
+
+
+4)
+select * from customers
+where cname like 'G%'
+order by cname
+limit 1;
+
+5)
+select city, max(rating) from customers
+group by city;

@@ -1,0 +1,120 @@
+1)create table SEMP
+   (
+   empno char(4),
+   empname char(20),
+   basic float,
+   deptno char(2),
+   depthead char(4));
+
+2)
+create table SDEPT(
+deptno char(2),
+deptname char(15)
+);
+
+3)
+insert into SDEPT values
+('10', 'Development'),
+('20', 'Training');
+
+4)
+insert into SEMP (empno, empname, basic, deptno, depthead)
+values('0001', 'sunil', 6000, '10', null),
+('0002', 'hiren', 8000, '20', null),
+('0003', 'ali', 4000, '10', '0001'),
+('0004', 'george', '6000', null, '0002');
+
+create table SUPPLIER(
+`s#` char(4),
+sname varchar(20),
+status int,
+city varchar(20));
+
+insert into SUPPLIER values
+('s1', 'Smith', 20, 'London'),
+('s2', 'Jones', 10, 'Paris'),
+('s3', 'Blake', 20, 'Paris'),
+('s4', 'Clark', 20, 'London'),
+('s5', 'Adams', 30, 'Athens');
+
+create table PARTS(
+`p#` char(4),
+pname varchar(20),
+color varchar(20),
+weight float,
+city varchar(20));
+
+insert into PARTS values
+('p1', 'Nut', 'Red', 12.0, 'London'),
+('p2', 'Bolt', 'Green', 17.0, 'Paris'),
+('p3', 'Screw', 'Blue', 17.0, 'Oslo'),
+('p4', 'Screw', 'Red', 14.0, 'London'),
+('p5', 'Cam', 'Blue', 12.0, 'Paris'),
+('p6', 'Cog', 'Red', 19.0, 'London');
+
+create table PROJECTS
+(
+`j#` char(4),
+jname varchar(20),
+city varchar(20));
+
+insert into PROJECTS values
+('j1', 'Sorter', 'Paris'),
+('j2', 'Display', 'Rome'),
+('j3', 'OCR', 'Athens'),
+('j4', 'Console', 'Athens'),
+('j5', 'RAID', 'London'),
+('j6', 'EDS', 'Oslo'),
+('j7', 'Tape', 'London');
+
+create table SUPPLIER_PARTS_PROJECT(
+`s#` char(4),
+`p#` char(4),
+`j#` char(4),
+qty int);
+
+insert into SUPPLIER_PARTS_PROJECT values
+('s1', 'p1', 'j1', 200),
+('s1', 'p1', 'j4', 700),
+('s2', 'p3', 'j1', 400);
+
+5)
+select * from SUPPLIER;
+
+6)
+select `s#`, sname from SUPPLIER;
+
+7)
+select pname, color from PARTS
+where city='London';
+
+8)
+select * from SUPPLIER
+where city='London';
+
+9)
+select * from SUPPLIER
+where city='Paris' or city='Athens';
+
+10)
+select * from PROJECTS
+where city='Athens';
+
+11)
+select pname from PARTS
+where weight between 12 and 14;
+
+12)
+select * from SUPPLIER
+where status >= 20;
+
+13)
+select * from SUPPLIER
+where city != 'London';
+
+14)
+select city from SUPPLIER;
+
+15)
+select weight, weight*1000 'weight in milligram', weight*0.001 'weight in kg'
+from PARTS;

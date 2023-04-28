@@ -1,0 +1,22 @@
+1)
+select * from orders
+where odate='1990-10-03' or odate='1990-10-04';
+
+select * from orders
+where odate between '1990-10-03' and '1990-10-04';
+
+2)
+select * from customers
+where snum in(1001, 1004);
+
+3)
+select * from customers
+where ascii(substr(cname, 1, 1)) between 65 and 71;
+
+4)
+select * from customers
+where cname like 'c%';
+
+5)
+select * from orders
+where amt != 0 and amt is not null;
